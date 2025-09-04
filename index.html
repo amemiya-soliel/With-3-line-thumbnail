@@ -51,7 +51,7 @@ ul.linklist li a {
   background:#fff;
   border:2px solid transparent;
   box-shadow:0 2px 4px rgba(0,0,0,.1);
-  font-size:16px;              /* 基本は固定16px */
+  font-size:18px;              /* PCデフォルト */
   text-decoration:none;
   color:#06c;
   transition:all .2s;
@@ -60,13 +60,20 @@ ul.linklist li a {
   text-overflow:ellipsis;
 }
 
-/* 日付・AI → コンパクト（1行分高さ） */
+/* スマホ用フォント拡大 */
+@media (max-width: 600px) {
+  ul.linklist li a {
+    font-size:20px;
+  }
+}
+
+/* 日付・AI → コンパクト高さ */
 ul.linklist[data-cat="【日付別】"] li a,
 ul.linklist[data-cat="【AI】"] li a {
   height: 32px;
 }
 
-/* 人物・大会・企画・特集 → 少し大きめ（2行分高さ） */
+/* 人物・大会・企画・特集 → 少し大きめ高さ */
 ul.linklist[data-cat="【人物】"] li a,
 ul.linklist[data-cat="【大会】"] li a,
 ul.linklist[data-cat="【企画】"] li a,
@@ -76,7 +83,12 @@ ul.linklist[data-cat="【特集】"] li a {
 
 /* 長い名前だけ縮小 */
 ul.linklist li a.narrow {
-  font-size:14px;
+  font-size:16px;
+}
+@media (max-width: 600px) {
+  ul.linklist li a.narrow {
+    font-size:18px;
+  }
 }
 
 /* hover をカテゴリ色に連動 */
