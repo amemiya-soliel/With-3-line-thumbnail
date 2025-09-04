@@ -14,7 +14,6 @@ h1 {
   text-align:center;
   margin-bottom:16px;
 }
-/* カテゴリ見出し（色はインラインで注入） */
 h2.cat {
   padding:6px 10px;
   border-radius:6px;
@@ -23,21 +22,24 @@ h2.cat {
   margin:18px 0 10px;
   color:#333;
 }
-
-/* 3カラムグリッド */
+/* グリッド：スマホでもPCでも3列 */
 ul.linklist {
   list-style:none;
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap:10px;
   margin:8px 0 20px;
   padding:0;
 }
-/* ボタン */
+/* ボタンの高さを固定（2行分） */
 ul.linklist li a {
-  display:block;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height: 60px;               /* 高さ固定で揃える */
+  line-height:1.2;
   text-align:center;
-  padding:10px;
+  padding:6px;
   border-radius:12px;
   background:#fff;
   border:2px solid transparent;
@@ -46,16 +48,17 @@ ul.linklist li a {
   text-decoration:none;
   color:#06c;
   transition:all .2s;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
-/* hover をカテゴリ色と連動させる */
+/* hover をカテゴリ色に連動 */
 ul.linklist li a[data-cat="【AI】"]:hover     { background:#e0f0ff; transform:translateY(-2px); box-shadow:0 4px 8px rgba(0,0,0,.15); }
 ul.linklist li a[data-cat="【人物】"]:hover   { background:#ffeedd; transform:translateY(-2px); box-shadow:0 4px 8px rgba(0,0,0,.15); }
 ul.linklist li a[data-cat="【大会】"]:hover   { background:#e6ffe6; transform:translateY(-2px); box-shadow:0 4px 8px rgba(0,0,0,.15); }
 ul.linklist li a[data-cat="【企画】"]:hover   { background:#ffe6f2; transform:translateY(-2px); box-shadow:0 4px 8px rgba(0,0,0,.15); }
 ul.linklist li a[data-cat="【特集】"]:hover   { background:#f0e6ff; transform:translateY(-2px); box-shadow:0 4px 8px rgba(0,0,0,.15); }
 ul.linklist li a[data-cat="【日付別】"]:hover { background:#f5f5f5; transform:translateY(-2px); box-shadow:0 4px 8px rgba(0,0,0,.15); }
-
-/* 右上ツールバー：元のシンプルなボタン */
+/* 全動画検索ページボタン */
 .toolbar {
   display:flex;
   justify-content:flex-end;
