@@ -2,40 +2,90 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>全動画検索</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>動画インデックス</title>
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
 <style>
-body{font-family:system-ui,sans-serif;margin:1em;background:#fafafa;}
-h1{text-align:center;margin-bottom:1em;}
-.video-row{display:flex;align-items:flex-start;border-bottom:1px solid #ddd;padding:10px 0;transition:background .15s;}
-.video-row:hover{background:#f5f5ff;}
-.thumb{flex:0 0 120px;margin-right:12px;}
-.thumb img{width:120px;height:auto;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.15);display:block;}
-.info{flex:1;}
-.title{font-weight:bold;font-size:14px;margin-bottom:2px;}
-.title a{color:#06c;text-decoration:none;}
-.title a:hover{text-decoration:underline;}
-.desc{font-size:12px;color:#555;line-height:1.4;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.meta{font-size:11px;color:#666;}
-.kw{font-size:11px;color:#d26;margin-left:8px;}
-@media(max-width:640px){.video-row{flex-direction:row;}.thumb{margin-bottom:0;}}
-.controls{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0;}
-.controls input[type="text"]{flex:1 1 280px;padding:8px;font-size:14px;border:1px solid #ccc;border-radius:6px;}
-.controls label{font-size:13px;color:#333;}
-.back-link{display:block;margin:20px auto;width:fit-content;padding:10px 20px;font-size:14px;background:#06c;color:#fff;border-radius:6px;text-decoration:none;transition:background .2s;}
-.back-link:hover{background:#004a99;}
+body {
+  font-family: "Kosugi Maru","Rounded Mplus 1c","Noto Sans JP",
+               system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",
+               "Hiragino Kaku Gothic ProN","Yu Gothic",meiryo,sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.search-link {
+  text-align: right;
+  margin-bottom: 15px;
+}
+.search-link a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 6px 14px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  transition: all 0.2s;
+  font-size: 15px;
+}
+.search-link a:hover {
+  background-color: #333;
+  color: white;
+}
+.linklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.linklist li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.6em; /* 2行分固定 */
+  line-height: 1.4em;
+  padding: 6px;
+  background: white;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #1d4ed8;
+  font-size: 15px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+  transition: background 0.2s;
+}
+.linklist li a:hover {
+  background: #eef3f9;  /* ← 日付カテゴリ色に統一 */
+}
+@media (max-width: 768px) and (orientation: portrait) {
+  .linklist { grid-template-columns: repeat(3, 1fr); }
+  .linklist li a { font-size: 16px; }
+}
+@media (max-width: 1024px) and (orientation: landscape) {
+  .linklist { grid-template-columns: repeat(6, 1fr); }
+}
+@media (min-width: 1025px) {
+  .linklist { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+}
 </style>
 </head>
 <body>
-<h1>全動画検索</h1>
-<a class="back-link" href="index.html">◀ インデックスへ戻る</a>
-
-<div class="controls">
-  <input type="text" id="q" placeholder="タイトル・概要欄・日付を検索（例: AI 2025/05/21）">
-  <label>開始日: <input type="date" id="start"></label>
-  <label>終了日: <input type="date" id="end"></label>
-</div>
-
-<div id="list">
+  <h1>動画インデックス</h1>
+  <div class="search-link">
+    <a href="all_videos.html">▶ 全動画検索ページへ</a>
+  </div>
 
 <div class="video-row">
   <div class="thumb">
@@ -62142,40 +62192,6 @@ mickeyさん→https://www.youtube.com/channel/UCZQKgUDMUCGmN1QhsHO3VIg
     <div class="meta">2017/03/26 / 0:06:31<span class="kw"></span></div>
   </div>
 </div>
-
-</div>
-
-<script>
-const list = document.getElementById('list');
-const q = document.getElementById('q');
-const start = document.getElementById('start');
-const end = document.getElementById('end');
-function parseYMD(s) {
-  const m = (s || "").match(/(\d{4})\/(\d{2})\/(\d{2})/);
-  if (!m) return null;
-  return new Date(parseInt(m[1]), parseInt(m[2]) - 1, parseInt(m[3]));
-}
-function filter() {
-  const term = (q.value || "").toLowerCase();
-  const sd = start.value ? new Date(start.value) : null;
-  const ed = end.value ? new Date(end.value) : null;
-  const rows = list.getElementsByClassName('video-row');
-  for (let row of rows) {
-    const text = row.innerText.toLowerCase();
-    const meta = row.querySelector('.meta')?.innerText || "";
-    const m = meta.match(/\d{4}\/\d{2}\/\d{2}/);
-    const d = m ? parseYMD(m[0]) : null;
-    let ok = true;
-    if (term && !text.includes(term)) ok = false;
-    if (ok && sd && d && d < sd) ok = false;
-    if (ok && ed && d && d > ed) ok = false;
-    row.style.display = ok ? 'flex' : 'none';
-  }
-}
-q.addEventListener('input', filter);
-start.addEventListener('change', filter);
-end.addEventListener('change', filter);
-</script>
 
 </body>
 </html>

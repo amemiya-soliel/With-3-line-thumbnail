@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>動画インデックス</title>
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
 <style>
 :root {
   --fs-base: 16px;
@@ -19,7 +20,9 @@
 * { box-sizing: border-box; }
 html,body { margin: 0; padding: 0; }
 body {
-  font-family: "Kosugi Maru","Rounded Mplus 1c","Noto Sans JP",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",meiryo,sans-serif;
+  font-family: "Kosugi Maru","Rounded Mplus 1c","Noto Sans JP",system-ui,
+               -apple-system,BlinkMacSystemFont,"Segoe UI",
+               "Hiragino Kaku Gothic ProN","Yu Gothic",meiryo,sans-serif;
   font-size: var(--fs-base);
   background: #f7f7f9;
 }
@@ -39,7 +42,6 @@ h1 {
   padding: 8px 12px;
   border-radius: 8px;
   margin: 22px 0 8px;
-  background: #eef3f9;
 }
 .title-date   { background: #eef3f9; }
 .title-ai     { background: #e7f0ff; }
@@ -95,8 +97,16 @@ h1 {
     padding: 12px 8px;
   }
 }
-</style>
 
+/* 共通：hover時にカテゴリ別の背景色に */
+.linklist li a.date:hover   { background: #eef3f9; }  /* 日付 */
+.linklist li a.ai:hover     { background: #dbeafe; }  /* AI */
+.linklist li a.person:hover { background: #fde2cf; }  /* 人物 */
+.linklist li a.event:hover  { background: #dcfce7; }  /* 大会 */
+.linklist li a.plan:hover   { background: #fce7f3; }  /* 企画 */
+.linklist li a.topic:hover  { background: #ede9fe; }  /* 特集 */
+
+</style>
 </head>
 <body>
   <div class="container">
@@ -104,7 +114,7 @@ h1 {
     <div class="search-link">
       <a href="all_videos.html">▶ 全動画検索ページへ</a>
     </div>
-    <div class='category-title' style='background:#eef3f9;'>【日付別】</div><ul class='linklist'><li><a href='2025年07月～09月.html'>2025/07–09</a></li><li><a href='2025年04月～06月.html'>2025/04–06</a></li><li><a href='2025年01月～03月.html'>2025/01–03</a></li><li><a href='2024年10月～12月.html'>2024/10–12</a></li><li><a href='2024年07月～09月.html'>2024/07–09</a></li><li><a href='2024年04月～06月.html'>2024/04–06</a></li><li><a href='2024年01月～03月.html'>2024/01–03</a></li><li><a href='2023年10月～12月.html'>2023/10–12</a></li><li><a href='2023年07月～09月.html'>2023/07–09</a></li><li><a href='2023年04月～06月.html'>2023/04–06</a></li><li><a href='2023年01月～03月.html'>2023/01–03</a></li><li><a href='2022年10月～12月.html'>2022/10–12</a></li><li><a href='2022年07月～09月.html'>2022/07–09</a></li><li><a href='2022年04月～06月.html'>2022/04–06</a></li><li><a href='2022年01月～03月.html'>2022/01–03</a></li><li><a href='2021年10月～12月.html'>2021/10–12</a></li><li><a href='2021年07月～09月.html'>2021/07–09</a></li><li><a href='2021年04月～06月.html'>2021/04–06</a></li><li><a href='2021年01月～03月.html'>2021/01–03</a></li><li><a href='2020年10月～12月.html'>2020/10–12</a></li><li><a href='2020年07月～09月.html'>2020/07–09</a></li><li><a href='2020年04月～06月.html'>2020/04–06</a></li><li><a href='2020年01月～03月.html'>2020/01–03</a></li><li><a href='2019年10月～12月.html'>2019/10–12</a></li><li><a href='2019年07月～09月.html'>2019/07–09</a></li><li><a href='2019年04月～06月.html'>2019/04–06</a></li><li><a href='2019年01月～03月.html'>2019/01–03</a></li><li><a href='2018年.html'>2018年</a></li><li><a href='2017年.html'>2017年</a></li></ul><div class='category-title' style='background:#e7f0ff;'>【AI】</div><ul class='linklist'><li><a href='AI一覧.html'>AI一覧</a></li><li><a href='ほいこ.html'>ほいこ</a></li><li><a href='Cold Clear.html'>Cold Clear</a></li><li><a href='Zetris.html'>Zetris</a></li><li><a href='tetras.html'>tetras</a></li></ul><div class='category-title' style='background:#ffe8d9;'>【人物】</div><ul class='linklist'><li><a href='もこう.html'>もこう</a></li><li><a href='しゃけごはん.html'>しゃけごはん</a></li><li><a href='kazu.html'>kazu</a></li><li><a href='ふれあ.html'>ふれあ</a></li><li><a href='uyeshota.html'>uyeshota</a></li><li><a href='ゆうくん.html'>ゆうくん</a></li><li><a href='ドラえもん.html'>ドラえもん</a></li><li><a href='あてん.html'>あてん</a></li><li><a href='いわしせいじん.html'>いわしせいじん</a></li><li><a href='スラさん.html'>スラさん</a></li></ul><div class='category-title' style='background:#e8f7e8;'>【大会】</div><ul class='linklist'><li><a href='大会一覧.html'>大会一覧</a></li><li><a href='ぷよテト全国大会.html'>ぷよテト全国大会</a></li><li><a href='リーグ.html'>リーグ</a></li><li><a href='Tetris Block Party.html'>Tetris Block Party</a></li><li><a href='ラストマッチ.html'>ラストマッチ</a></li><li><a href='1.5KCUP.html'>1.5KCUP</a></li><li><a href='ぷよテトおかえり杯.html'>ぷよテトおかえり杯</a></li><li><a href='2vs2同業チーム戦.html'>2vs2同業チーム戦</a></li><li><a href='タッグ杯.html'>タッグ杯</a></li><li><a href='スイカゲーム大会.html'>スイカゲーム大会</a></li><li><a href='あめみや杯.html'>あめみや杯</a></li></ul><div class='category-title' style='background:#fbe1ee;'>【企画】</div><ul class='linklist'><li><a href='神vsほいこ.html'>神vsほいこ</a></li><li><a href='AI解説.html'>AI解説</a></li><li><a href='実況解説.html'>実況解説</a></li><li><a href='連勝企画（TETRIS99）.html'>連勝企画（TETRIS99）</a></li><li><a href='連勝企画（ぷよテト）.html'>連勝企画（ぷよテト）</a></li><li><a href='最大REN企画(ぷよテト).html'>最大REN企画(ぷよテト)</a></li><li><a href='コーチング.html'>コーチング</a></li><li><a href='タッグ.html'>タッグ</a></li><li><a href='TETRIS99.html'>TETRIS99</a></li><li><a href='テトリスエフェクト.html'>テトリスエフェクト</a></li><li><a href='砂テトリス.html'>砂テトリス</a></li><li><a href='神のぷよぷよ.html'>神のぷよぷよ</a></li><li><a href='スイカゲーム.html'>スイカゲーム</a></li><li><a href='マリオ35.html'>マリオ35</a></li><li><a href='あつ森.html'>あつ森</a></li><li><a href='F-ZERO99.html'>F-ZERO99</a></li><li><a href='パックマン99.html'>パックマン99</a></li><li><a href='カービィーのエアライダー.html'>カービィーのエアライダー</a></li><li><a href='ズーキーパー.html'>ズーキーパー</a></li></ul><div class='category-title' style='background:#efe6ff;'>【特集】</div><ul class='linklist'><li><a href='解説動画.html'>解説動画</a></li><li><a href='コラボ.html'>コラボ</a></li><li><a href='4人対戦.html'>4人対戦</a></li><li><a href='記録その他.html'>記録その他</a></li><li><a href='重大発表.html'>重大発表</a></li><li><a href='記念配信.html'>記念配信</a></li><li><a href='誕生日企画.html'>誕生日企画</a></li><li><a href='1人VS98人.html'>1人VS98人</a></li><li><a href='マージン0秒.html'>マージン0秒</a></li><li><a href='マージン32秒.html'>マージン32秒</a></li><li><a href='筋トレシリーズ.html'>筋トレシリーズ</a></li></ul>
+    <div class='category-title' style='background:#eef3f9;'>【日付別】</div><ul class='linklist'><li><a class='date' href='2025年07月～09月.html'>2025/07–09</a></li><li><a class='date' href='2025年04月～06月.html'>2025/04–06</a></li><li><a class='date' href='2025年01月～03月.html'>2025/01–03</a></li><li><a class='date' href='2024年10月～12月.html'>2024/10–12</a></li><li><a class='date' href='2024年07月～09月.html'>2024/07–09</a></li><li><a class='date' href='2024年04月～06月.html'>2024/04–06</a></li><li><a class='date' href='2024年01月～03月.html'>2024/01–03</a></li><li><a class='date' href='2023年10月～12月.html'>2023/10–12</a></li><li><a class='date' href='2023年07月～09月.html'>2023/07–09</a></li><li><a class='date' href='2023年04月～06月.html'>2023/04–06</a></li><li><a class='date' href='2023年01月～03月.html'>2023/01–03</a></li><li><a class='date' href='2022年10月～12月.html'>2022/10–12</a></li><li><a class='date' href='2022年07月～09月.html'>2022/07–09</a></li><li><a class='date' href='2022年04月～06月.html'>2022/04–06</a></li><li><a class='date' href='2022年01月～03月.html'>2022/01–03</a></li><li><a class='date' href='2021年10月～12月.html'>2021/10–12</a></li><li><a class='date' href='2021年07月～09月.html'>2021/07–09</a></li><li><a class='date' href='2021年04月～06月.html'>2021/04–06</a></li><li><a class='date' href='2021年01月～03月.html'>2021/01–03</a></li><li><a class='date' href='2020年10月～12月.html'>2020/10–12</a></li><li><a class='date' href='2020年07月～09月.html'>2020/07–09</a></li><li><a class='date' href='2020年04月～06月.html'>2020/04–06</a></li><li><a class='date' href='2020年01月～03月.html'>2020/01–03</a></li><li><a class='date' href='2019年10月～12月.html'>2019/10–12</a></li><li><a class='date' href='2019年07月～09月.html'>2019/07–09</a></li><li><a class='date' href='2019年04月～06月.html'>2019/04–06</a></li><li><a class='date' href='2019年01月～03月.html'>2019/01–03</a></li><li><a class='date' href='2018年.html'>2018年</a></li><li><a class='date' href='2017年.html'>2017年</a></li></ul><div class='category-title' style='background:#e7f0ff;'>【AI】</div><ul class='linklist'><li><a class='ai' href='AI一覧.html'>AI一覧</a></li><li><a class='ai' href='ほいこ.html'>ほいこ</a></li><li><a class='ai' href='Cold Clear.html'>Cold Clear</a></li><li><a class='ai' href='Zetris.html'>Zetris</a></li><li><a class='ai' href='tetras.html'>tetras</a></li></ul><div class='category-title' style='background:#ffe8d9;'>【人物】</div><ul class='linklist'><li><a class='person' href='もこう.html'>もこう</a></li><li><a class='person' href='しゃけごはん.html'>しゃけごはん</a></li><li><a class='person' href='kazu.html'>kazu</a></li><li><a class='person' href='ふれあ.html'>ふれあ</a></li><li><a class='person' href='uyeshota.html'>uyeshota</a></li><li><a class='person' href='ゆうくん.html'>ゆうくん</a></li><li><a class='person' href='ドラえもん.html'>ドラえもん</a></li><li><a class='person' href='あてん.html'>あてん</a></li><li><a class='person' href='いわしせいじん.html'>いわしせいじん</a></li><li><a class='person' href='スラさん.html'>スラさん</a></li></ul><div class='category-title' style='background:#e8f7e8;'>【大会】</div><ul class='linklist'><li><a class='event' href='大会一覧.html'>大会一覧</a></li><li><a class='event' href='ぷよテト全国大会.html'>ぷよテト全国大会</a></li><li><a class='event' href='リーグ.html'>リーグ</a></li><li><a class='event' href='Tetris Block Party.html'>Tetris Block Party</a></li><li><a class='event' href='ラストマッチ.html'>ラストマッチ</a></li><li><a class='event' href='1.5KCUP.html'>1.5KCUP</a></li></ul>
   </div>
 
   <script>
