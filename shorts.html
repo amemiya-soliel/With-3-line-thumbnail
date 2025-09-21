@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>shorts（59件）</title>
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+<style>
+
+
+/* --- 共通フォント・親ページスタイル --- */
+body {
+  font-family: "Kosugi Maru","Rounded Mplus 1c","Noto Sans JP",system-ui,
+               -apple-system,BlinkMacSystemFont,"Segoe UI",
+               "Hiragino Kaku Gothic ProN","Yu Gothic",meiryo,sans-serif;
+  margin:1em;
+  background:#fafafa;
+}
+
+/* 見出し */
+h2 {
+  text-align:center;
+  font-size:18px;
+  margin:16px 0;
+  padding:6px;
+  border-radius:8px;
+  background:#fff;
+}
+
+/* --- 検索フォーム --- */
+.controls {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:10px 0 18px;
+}
+.controls input[type="text"] {
+  flex:1 1 280px;
+  padding:8px;
+  font-size:14px;
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+.controls label {
+  font-size:13px;
+  color:#333;
+}
+
+/* --- カテゴリリンク定義 --- */
+:root {
+  --fs-base: 16px;
+  --fs-mobile: 17px;
+  --gap: 10px;
+  --btn-h1: 44px;
+  --btn-h2: 64px;
+  --card-bg: #fff;
+  --card-shadow: 0 2px 6px rgba(0,0,0,.08);
+  --link: #1971ff;
+}
+
+.linklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  .linklist {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .linklist {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .linklist {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+.linklist li a {
+  display: -webkit-box;         /* Flex → multi-line */
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2;        /* 最大 2 行まで */
+  overflow: hidden;             /* はみ出し非表示 */
+  text-overflow: ellipsis;
+
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  text-decoration: none;
+  color: var(--link);
+  text-align: center;
+  line-height: 1.4;             /* 2 行用に調整 */
+  white-space: normal;          /* 折り返し許可 */
+  word-break: break-word;       /* 長い単語も折り返す */
+  transition: transform .06s ease, box-shadow .06s ease, background-color .06s ease;
+}
+
+.linklist li a.date {
+  font-size: 1.05em;
+  font-weight: 500;
+}
+
+.linklist li a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0,0,0,.12);
+  background: #f5faff;
+}
+
+.linklist.one-line li a {
+  min-height: var(--btn-h1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .linklist li a {
+    padding: 12px 8px;
+  }
+}
+
+.linklist li a.topic:hover  { background: #e6d9ff; }
+.linklist li a.plan:hover   { background: #f9d4e7; }
+.linklist li a.person:hover { background: #ffd8bf; }
+.linklist li a.ai:hover     { background: #d6e7ff; }
+.linklist li a.event:hover  { background: #d6f0d6; }
+.linklist li a.game:hover   { background: #fff2cc; }
+.linklist li a.date:hover   { background: #dee6f0; }
+
+/* --- 戻るリンク --- */
+.back-link {
+  display:block;
+  margin:10px auto 20px;
+  width:fit-content;
+  padding:8px 14px;
+  font-size:14px;
+  background:#06c;
+  color:#fff;
+  border-radius:6px;
+  text-decoration:none;
+  transition:background .2s;
+}
+.back-link:hover { background:#004a99; }
+
+/* --- 区切り線 --- */
+.section-divider {
+  border: none;
+  border-top: 2px solid #e91e63;
+  margin: 20px 0;
+}
+
+/* --- 動画リスト --- */
+.video-row {
+  display:flex;
+  align-items:flex-start;
+  border-bottom:1px solid #ddd;
+  padding:10px 0;
+  transition:background .15s;
+}
+.video-row:hover{background:#f5f5ff;}
+.thumb{flex:0 0 120px;margin-right:12px;}
+.thumb img{width:120px;height:auto;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.15);display:block;}
+.info{flex:1;}
+.title{font-weight:bold;font-size:14px;margin-bottom:2px;}
+.title a{color:#06c;text-decoration:none;}
+.title a:hover{text-decoration:underline;}
+.desc{font-size:12px;color:#555;line-height:1.4;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.meta{font-size:11px;color:#666;}
+.kw{font-size:11px;color:#d26;margin-left:8px;}
+
+</style>
+</head>
+<body>
+<a class="back-link" href="index.html">◀ インデックスへ戻る</a>
+
+
+<h2>shorts（59件）</h2>
+
+<!-- カテゴリリンク（件数は表示しない） -->
+<ul class="linklist">
+  <li><a href='世界一のRENの繋げ方(shorts).html'>世界一のRENの繋げ方</a></li><li><a href='奇跡・快挙(shorts).html'>奇跡・快挙</a></li><li><a href='リカバリー・新テンプレ(shorts).html'>リカバリー・新テンプレ</a></li><li><a href='ゴキみや(shorts).html'>ゴキみや</a></li><li><a href='その他の神プレイ(shorts).html'>その他の神プレイ</a></li><li><a href='魅せプ・珍事その他(shorts).html'>魅せプ・珍事その他</a></li>
+</ul>
+
+<hr class="section-divider">
+
+<!-- 検索フォーム（カテゴリリンクの下） -->
+<div class="controls">
+  <input type="text" id="q" placeholder="shortsを検索（タイトル・概要欄・日付）">
+  <label>開始日: <input type="date" id="start"></label>
+  <label>終了日: <input type="date" id="end"></label>
+</div>
+
+<!-- 動画リスト -->
+<div id="list">
+  
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=9UP3afJ6sTI">
+      <img alt="thumb" src="https://i.ytimg.com/vi/9UP3afJ6sTI/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=9UP3afJ6sTI">これが世界一のRENの繋げ方⑪ #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-09-14 / 00:00:23<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=OzaRHkjE-Ls">
+      <img alt="thumb" src="https://i.ytimg.com/vi/OzaRHkjE-Ls/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=OzaRHkjE-Ls">究極AIのほいこ100%相手に途中RENで勝った瞬間 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-09-09 / 00:01:27<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=HUYeWDhh8Zk">
+      <img alt="thumb" src="https://i.ytimg.com/vi/HUYeWDhh8Zk/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=HUYeWDhh8Zk">これが世界一のRENの繋げ方➉ #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-08-26 / 00:00:37<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=V0A_3wIpR-c">
+      <img alt="thumb" src="https://i.ytimg.com/vi/V0A_3wIpR-c/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=V0A_3wIpR-c">これが世界一のRENの繋げ方 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-08-17 / 00:00:51<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=T0V-_f1GjBM">
+      <img alt="thumb" src="https://i.ytimg.com/vi/T0V-_f1GjBM/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=T0V-_f1GjBM">神がかった判断で大逆転した瞬間 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-08-15 / 00:00:43<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=KRb9yqsnaUI">
+      <img alt="thumb" src="https://i.ytimg.com/vi/KRb9yqsnaUI/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=KRb9yqsnaUI">過去最高のゴキブリ神試合 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-08-12 / 00:00:36<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=KXQICJ3uegY">
+      <img alt="thumb" src="https://i.ytimg.com/vi/KXQICJ3uegY/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=KXQICJ3uegY">置きミスは火力！異次元リカバリーを決めた瞬間 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-08-01 / 00:00:20<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=zmH5wIinVoE">
+      <img alt="thumb" src="https://i.ytimg.com/vi/zmH5wIinVoE/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=zmH5wIinVoE">過去最高のゴキブリ試合 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-07-16 / 00:01:00<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=Kj3kg4Jp6yc">
+      <img alt="thumb" src="https://i.ytimg.com/vi/Kj3kg4Jp6yc/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=Kj3kg4Jp6yc">背面TSTから背面トリニティを決めた瞬間 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-07-11 / 00:00:33<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=BzKIk4nQ0kU">
+      <img alt="thumb" src="https://i.ytimg.com/vi/BzKIk4nQ0kU/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=BzKIk4nQ0kU">ついに、ほいこ式堀RENを習得した男 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-07-04 / 00:00:25<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=YdqxJJH-MZ8">
+      <img alt="thumb" src="https://i.ytimg.com/vi/YdqxJJH-MZ8/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=YdqxJJH-MZ8">これが世界一のRENの繋げ方⑧ #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-07-02 / 00:00:28<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=ov9PO5vUxB0">
+      <img alt="thumb" src="https://i.ytimg.com/vi/ov9PO5vUxB0/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=ov9PO5vUxB0">これが世界一のRENの繋げ方⑦ #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-06-24 / 00:00:34<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=Tz_FtUm5iM0">
+      <img alt="thumb" src="https://i.ytimg.com/vi/Tz_FtUm5iM0/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=Tz_FtUm5iM0">これが世界一のRENの繋げ方⑥ #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-05-31 / 00:00:44<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=sHc_i7oKxbM">
+      <img alt="thumb" src="https://i.ytimg.com/vi/sHc_i7oKxbM/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=sHc_i7oKxbM">これが世界一のRENの繋げ方⑤ #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-05-29 / 00:00:40<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=nW1jWjNSPlc">
+      <img alt="thumb" src="https://i.ytimg.com/vi/nW1jWjNSPlc/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=nW1jWjNSPlc">これが世界一のRENの繋げ方④ #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-05-27 / 00:00:35<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=KbHtXDerhCQ">
+      <img alt="thumb" src="https://i.ytimg.com/vi/KbHtXDerhCQ/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=KbHtXDerhCQ">噛み合い大臣レベル一穣ww #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-05-24 / 00:00:37<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=ChqO5ghJdQM">
+      <img alt="thumb" src="https://i.ytimg.com/vi/ChqO5ghJdQM/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=ChqO5ghJdQM">相手最強！俺は宇宙最強！！！ #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-05-23 / 00:00:36<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=3ApVj2cGLdI">
+      <img alt="thumb" src="https://i.ytimg.com/vi/3ApVj2cGLdI/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=3ApVj2cGLdI">これが世界一のRENの繋げ方③ #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-05-21 / 00:00:26<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=z5GUPiKjh9Q">
+      <img alt="thumb" src="https://i.ytimg.com/vi/z5GUPiKjh9Q/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=z5GUPiKjh9Q">これが世界一のRENの繋げ方② #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-05-18 / 00:00:28<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=5jWOVX5Owp4">
+      <img alt="thumb" src="https://i.ytimg.com/vi/5jWOVX5Owp4/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=5jWOVX5Owp4">これが世界一のRENの繋げ方 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-05-16 / 00:00:39<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=CnaYUsS9GUM">
+      <img alt="thumb" src="https://i.ytimg.com/vi/CnaYUsS9GUM/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=CnaYUsS9GUM">1対2を大逆転した神試合 #shorts #重音テト</a></div>
+    <div class="desc">チャンネル登録→https://goo.gl/jzIHw6
+ツイッター→https://twitter.com/inazuma0217tai1
+スポンサー登録→https://gaming.youtube.com/channel/UCHog7L3CzsDg2GH9aza1bPg
+ラインスタンプ→https://line.me/S/sticker/9262902</div>
+    <div class="meta">2025-05-10 / 00:00:35<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=l7UOwtB-NEc">
+      <img alt="thumb" src="https://i.ytimg.com/vi/l7UOwtB-NEc/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=l7UOwtB-NEc">1対2を大逆転した神試合 #shorts #重音テト</a></div>
+    <div class="desc">チャンネル登録→https://goo.gl/jzIHw6
+ツイッター→https://twitter.com/inazuma0217tai1
+スポンサー登録→https://gaming.youtube.com/channel/UCHog7L3CzsDg2GH9aza1bPg
+ラインスタンプ→https://line.me/S/sticker/9262902</div>
+    <div class="meta">2025-05-08 / 00:01:03<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=4Xj6NzvV4t0">
+      <img alt="thumb" src="https://i.ytimg.com/vi/4Xj6NzvV4t0/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=4Xj6NzvV4t0">絶対に絶対に完璧だった試合！！！ #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-04-20 / 00:00:18<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=WOx_NhQ06Po">
+      <img alt="thumb" src="https://i.ytimg.com/vi/WOx_NhQ06Po/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=WOx_NhQ06Po">高度すぎるヨグソトースの先読みをした瞬間 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-04-16 / 00:00:14<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=glbM-Ry9ST4">
+      <img alt="thumb" src="https://i.ytimg.com/vi/glbM-Ry9ST4/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=glbM-Ry9ST4">タイヤキ君が大好きな中開けRENを打ってみた #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-04-10 / 00:01:25<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=FqACuWW8U2M">
+      <img alt="thumb" src="https://i.ytimg.com/vi/FqACuWW8U2M/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=FqACuWW8U2M">これが世界一のRENの繋げ方 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-03-30 / 00:00:38<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=6yOHDBfC0kM">
+      <img alt="thumb" src="https://i.ytimg.com/vi/6yOHDBfC0kM/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=6yOHDBfC0kM">上手すぎるTSSドネイト&3連TSTタワー #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-03-01 / 00:00:32<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=L1-9v5Ol0Jw">
+      <img alt="thumb" src="https://i.ytimg.com/vi/L1-9v5Ol0Jw/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=L1-9v5Ol0Jw">絶望的な状況から大逆転した瞬間 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-02-26 / 00:01:00<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=QRpCVRpMbcM">
+      <img alt="thumb" src="https://i.ytimg.com/vi/QRpCVRpMbcM/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=QRpCVRpMbcM">過去最高のゴキブリ試合 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-02-18 / 00:01:11<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=5S4U4OymgDg">
+      <img alt="thumb" src="https://i.ytimg.com/vi/5S4U4OymgDg/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=5S4U4OymgDg">絶望的な状況からスーパーゴキブリ大逆転勝利をした瞬間 #shorts #重音テト</a></div>
+    <div class="desc"></div>
+    <div class="meta">2025-02-10 / 00:01:00<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=RIFQn7zR1fo">
+      <img alt="thumb" src="https://i.ytimg.com/vi/RIFQn7zR1fo/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=RIFQn7zR1fo">これがREN世界一の繋げ方【ぷよぷよテトリス2】【puyopuyotetris2】#shorts  #重音テト</a></div>
+    <div class="desc">チャンネル登録→https://goo.gl/jzIHw6
+ツイッター→https://twitter.com/inazuma0217tai1
+スポンサー登録→https://gaming.youtube.com/channel/UCHog7L3CzsDg2GH9aza1bPg
+ラインスタンプ→https://line.me/S/sticker/9262902</div>
+    <div class="meta">2025-01-29 / 00:00:34<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=pqzBRSEcPH4">
+      <img alt="thumb" src="https://i.ytimg.com/vi/pqzBRSEcPH4/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=pqzBRSEcPH4">RENの繋げ方が上手すぎる17RENを何故か耐えてくる究極AI #shorts #重音テト</a></div>
+    <div class="desc">https://youtu.be/Soy4jGPHr3g?si=ygXxUY33vJymF03p</div>
+    <div class="meta">2025-01-15 / 00:00:26<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=I6GzxEbnEWU">
+      <img alt="thumb" src="https://i.ytimg.com/vi/I6GzxEbnEWU/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=I6GzxEbnEWU">新テンプレ開拓！！芸術的リカバリーを魅せた瞬間 #shorts</a></div>
+    <div class="desc">チャンネル登録→https://goo.gl/jzIHw6
+ツイッター→https://twitter.com/inazuma0217tai1
+スポンサー登録→https://gaming.youtube.com/channel/UCHog7L3CzsDg2GH9aza1bPg
+ラインスタンプ→https://line.me/S/sticker/9262902</div>
+    <div class="meta">2024-10-17 / 00:00:28<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=4cGOID4tX0s">
+      <img alt="thumb" src="https://i.ytimg.com/vi/4cGOID4tX0s/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=4cGOID4tX0s">残り1ラインあれば耐えられます #shorts</a></div>
+    <div class="desc">チャンネル登録→https://goo.gl/jzIHw6
+ツイッター→https://twitter.com/inazuma0217tai1
+スポンサー登録→https://gaming.youtube.com/channel/UCHog7L3CzsDg2GH9aza1bPg
+ラインスタンプ→https://line.me/S/sticker/9262902</div>
+    <div class="meta">2024-09-29 / 00:00:58<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=E9WQZ2k2awU">
+      <img alt="thumb" src="https://i.ytimg.com/vi/E9WQZ2k2awU/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=E9WQZ2k2awU">新技！反復横跳びTST #shorts</a></div>
+    <div class="desc">チャンネル登録→https://goo.gl/jzIHw6
+ツイッター→https://twitter.com/inazuma0217tai1
+スポンサー登録→https://gaming.youtube.com/channel/UCHog7L3CzsDg2GH9aza1bPg
+ラインスタンプ→https://line.me/S/sticker/9262902</div>
+    <div class="meta">2024-09-28 / 00:00:20<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=rbiKFDgapb8">
+      <img alt="thumb" src="https://i.ytimg.com/vi/rbiKFDgapb8/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=rbiKFDgapb8">超ゴキブリ大逆転試合を魅せた瞬間 #shorts</a></div>
+    <div class="desc">チャンネル登録→https://goo.gl/jzIHw6
+ツイッター→https://twitter.com/inazuma0217tai1
+スポンサー登録→https://gaming.youtube.com/channel/UCHog7L3CzsDg2GH9aza1bPg
+ラインスタンプ→https://line.me/S/sticker/9262902</div>
+    <div class="meta">2024-09-27 / 00:00:22<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=j0QRgWxzsDw">
+      <img alt="thumb" src="https://i.ytimg.com/vi/j0QRgWxzsDw/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=j0QRgWxzsDw">公式大会で魅せたゴキブリ大逆転試合 #shorts</a></div>
+    <div class="desc">チャンネル登録→https://goo.gl/jzIHw6
+ツイッター→https://twitter.com/inazuma0217tai1
+スポンサー登録→https://gaming.youtube.com/channel/UCHog7L3CzsDg2GH9aza1bPg
+ラインスタンプ→https://line.me/S/sticker/9262902</div>
+    <div class="meta">2024-09-16 / 00:01:00<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=AGrupCHIOrk">
+      <img alt="thumb" src="https://i.ytimg.com/vi/AGrupCHIOrk/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=AGrupCHIOrk">究極AI相手に神リカバリーを魅せた瞬間 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2024-09-04 / 00:00:27<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=zJkcozvAaDE">
+      <img alt="thumb" src="https://i.ytimg.com/vi/zJkcozvAaDE/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=zJkcozvAaDE">【世界２位】394万点を達成した瞬間 #shorts</a></div>
+    <div class="desc">チャンネル登録→https://goo.gl/jzIHw6
+ツイッター→https://twitter.com/inazuma0217tai1
+スポンサー登録→https://gaming.youtube.com/channel/UCHog7L3CzsDg2GH9aza1bPg
+ラインスタンプ→https://line.me/S/sticker/9262902</div>
+    <div class="meta">2024-08-30 / 00:00:59<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=mrgemBwzU_U">
+      <img alt="thumb" src="https://i.ytimg.com/vi/mrgemBwzU_U/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=mrgemBwzU_U">あめみやたいようリカバリー集 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2024-07-10 / 00:01:00<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=952Y_HTvirY">
+      <img alt="thumb" src="https://i.ytimg.com/vi/952Y_HTvirY/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=952Y_HTvirY">あめみやたいようゴキブリ集 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2024-06-29 / 00:00:59<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=gagBj5OBFJI">
+      <img alt="thumb" src="https://i.ytimg.com/vi/gagBj5OBFJI/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=gagBj5OBFJI">あめみやたいよう火力集 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2024-06-27 / 00:00:59<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=J6xZ2p3TZI4">
+      <img alt="thumb" src="https://i.ytimg.com/vi/J6xZ2p3TZI4/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=J6xZ2p3TZI4">超窮屈RENで究極AIを倒した瞬間w #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2024-06-17 / 00:00:35<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=lgYAbHdd-K4">
+      <img alt="thumb" src="https://i.ytimg.com/vi/lgYAbHdd-K4/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=lgYAbHdd-K4">ただの掘りRENで究極AIを倒した瞬間 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2024-06-12 / 00:00:45<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=5ECuU5vpqbs">
+      <img alt="thumb" src="https://i.ytimg.com/vi/5ECuU5vpqbs/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=5ECuU5vpqbs">【世界初】究極AIの100%ほいこ相手に2連取をした瞬間 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2024-06-10 / 00:00:58<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=ZHmLnBniOIo">
+      <img alt="thumb" src="https://i.ytimg.com/vi/ZHmLnBniOIo/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=ZHmLnBniOIo">【過去最高の奇跡】点数が77777点のゾロ目になった奇跡の瞬間 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-11-07 / 00:00:52<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=4KViuRtMQIA">
+      <img alt="thumb" src="https://i.ytimg.com/vi/4KViuRtMQIA/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=4KViuRtMQIA">絶望的な状況からスーパーゴキブリで大逆転した瞬間 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-11-01 / 00:00:57<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=FE6zLxTgVdg">
+      <img alt="thumb" src="https://i.ytimg.com/vi/FE6zLxTgVdg/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=FE6zLxTgVdg">人類が新型AIに初の2本連取した瞬間 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-10-23 / 00:01:01<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=9ou2d_OC8HU">
+      <img alt="thumb" src="https://i.ytimg.com/vi/9ou2d_OC8HU/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=9ou2d_OC8HU">100先で1-99の絶望的な状況の中、新型AIから奇跡の1本を取った瞬間 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-10-17 / 00:00:35<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=K7xIGBSvOdg">
+      <img alt="thumb" src="https://i.ytimg.com/vi/K7xIGBSvOdg/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=K7xIGBSvOdg">過去最高の先読み地獄を決める男 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-10-08 / 00:00:15<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=wL9a2vyDjxU">
+      <img alt="thumb" src="https://i.ytimg.com/vi/wL9a2vyDjxU/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=wL9a2vyDjxU">新テンプレ！？あめみや砲4号を開拓した瞬間 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-05-18 / 00:00:29<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=1mUfbSxN6xA">
+      <img alt="thumb" src="https://i.ytimg.com/vi/1mUfbSxN6xA/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=1mUfbSxN6xA">絶望的な状況から異次元の耐久力でゴキブリする男 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-04-08 / 00:00:58<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=wjpWjw577Xc">
+      <img alt="thumb" src="https://i.ytimg.com/vi/wjpWjw577Xc/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=wjpWjw577Xc">テトリス最強AIの100％ColdClearに2本目で勝つ瞬間 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-04-05 / 00:00:43<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=fjC66RPhvqk">
+      <img alt="thumb" src="https://i.ytimg.com/vi/fjC66RPhvqk/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=fjC66RPhvqk">異次元の耐久力で大逆転する瞬間 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-03-28 / 00:00:33<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=Z5QqZrsiCpA">
+      <img alt="thumb" src="https://i.ytimg.com/vi/Z5QqZrsiCpA/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=Z5QqZrsiCpA">スーパーゴキブリ神試合を魅せるテトリスの神 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-03-27 / 00:01:01<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=gpuljWeLjXc">
+      <img alt="thumb" src="https://i.ytimg.com/vi/gpuljWeLjXc/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=gpuljWeLjXc">攻撃の貫通を意図的に利用するという前代未聞の技術を魅せるテトリスの神 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-03-19 / 00:00:49<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=6PFqTi0tmwE">
+      <img alt="thumb" src="https://i.ytimg.com/vi/6PFqTi0tmwE/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=6PFqTi0tmwE">置きミスの神リカバリーを魅せるテトリスの神part2 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-03-15 / 00:00:23<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=zU4Gr1atIds">
+      <img alt="thumb" src="https://i.ytimg.com/vi/zU4Gr1atIds/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=zU4Gr1atIds">置きミスの神リカバリーを魅せるテトリスの神 #shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-03-07 / 00:00:16<span class="kw"></span></div>
+  </div>
+</div>
+
+<div class="video-row">
+  <div class="thumb">
+    <a target="_blank" href="https://www.youtube.com/watch?v=cMxZ7jL1FKM">
+      <img alt="thumb" src="https://i.ytimg.com/vi/cMxZ7jL1FKM/mqdefault.jpg">
+    </a>
+  </div>
+  <div class="info">
+    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=cMxZ7jL1FKM">テトリス世界一が魅せた耐え試合#shorts</a></div>
+    <div class="desc"></div>
+    <div class="meta">2022-03-05 / 00:00:16<span class="kw"></span></div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const list = document.getElementById('list');
+const q = document.getElementById('q');
+const start = document.getElementById('start');
+const end = document.getElementById('end');
+function parseYMD(s) {
+  const m = (s || "").match(/(\d{4})-(\d{2})-(\d{2})/);
+  if (!m) return null;
+  return new Date(parseInt(m[1]), parseInt(m[2]) - 1, parseInt(m[3]));
+}
+function filter() {
+  const term = (q.value || "").toLowerCase();
+  const sd = start.value ? new Date(start.value) : null;
+  const ed = end.value ? new Date(end.value) : null;
+  const rows = list.getElementsByClassName('video-row');
+  for (let row of rows) {
+    const text = row.innerText.toLowerCase();
+    const meta = row.querySelector('.meta')?.innerText || "";
+    const m = meta.match(/\d{4}-\d{2}-\d{2}/);
+    const d = m ? parseYMD(m[0]) : null;
+    let ok = true;
+    if (term && !text.includes(term)) ok = false;
+    if (ok && sd && d && d < sd) ok = false;
+    if (ok && ed && d && d > ed) ok = false;
+    row.style.display = ok ? 'flex' : 'none';
+  }
+}
+q && q.addEventListener('input', filter);
+start && start.addEventListener('change', filter);
+end && end.addEventListener('change', filter);
+</script>
+</body>
+</html>
