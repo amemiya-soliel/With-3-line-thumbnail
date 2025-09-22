@@ -14,6 +14,17 @@ body {
                "Hiragino Kaku Gothic ProN","Yu Gothic",meiryo,sans-serif;
   margin:1em;
   background:#fafafa;
+
+}
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+  }
+}
+@media (min-width: 769px) {
+  body {
+    margin: 1em;
+  }
 }
 
 /* 見出し */
@@ -90,7 +101,6 @@ h2 {
   -webkit-line-clamp: 2;        /* 最大 2 行まで */
   overflow: hidden;             /* はみ出し非表示 */
   text-overflow: ellipsis;
-
   justify-content: center;
   align-items: center;
   padding: 10px 10px;
@@ -104,6 +114,7 @@ h2 {
   white-space: normal;          /* 折り返し許可 */
   word-break: break-word;       /* 長い単語も折り返す */
   transition: transform .06s ease, box-shadow .06s ease, background-color .06s ease;
+  min-height: var(--btn-h1); /* 統一した高さ */
 }
 
 .linklist li a.date {
