@@ -96,25 +96,26 @@ h2 {
 }
 
 .linklist li a {
-  display: -webkit-box;         /* Flex → multi-line */
-  -webkit-box-orient: vertical; 
-  -webkit-line-clamp: 2;        /* 最大 2 行まで */
-  overflow: hidden;             /* はみ出し非表示 */
+  display: flex; /* -webkit-boxをflexに変更 */
+  flex-direction: column; /* 垂直方向にスタック */
+  justify-content: center; /* 垂直方向に中央揃え */
+  align-items: center; /* 水平方向に中央揃え */
+  -webkit-line-clamp: 2; /* 多行表示を維持 */
+  overflow: hidden;
   text-overflow: ellipsis;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 10px;
-  background: var(--card-bg);
+  padding: 6px 10px; /* 縦paddingを減らす */
+  background: #D8BFD8; /* 明るい紫（デフォルト） */
   border-radius: 12px;
   box-shadow: var(--card-shadow);
   text-decoration: none;
   color: var(--link);
   text-align: center;
-  line-height: 1.4;             /* 2 行用に調整 */
-  white-space: normal;          /* 折り返し許可 */
-  word-break: break-word;       /* 長い単語も折り返す */
+  line-height: 1.2; /* 行間を少し詰める */
+  white-space: normal;
+  word-break: break-word;
   transition: transform .06s ease, box-shadow .06s ease, background-color .06s ease;
-  min-height: var(--btn-h1); /* 統一した高さ */
+  min-height: 30px; /* 統一した高さ */
+  height: 30px; /* 高さを固定 */
 }
 
 .linklist li a.date {
@@ -125,7 +126,7 @@ h2 {
 .linklist li a:hover {
   transform: translateY(-1px);
   box-shadow: 0 3px 10px rgba(0,0,0,.12);
-  background: #f5faff;
+  background: #DDA0DD; /* 薄い紫（ホバー時） */
 }
 
 .linklist.one-line li a {
