@@ -90,11 +90,12 @@ h2 {
   }
 }
 
+/* --- 各カテゴリリンクボタンの設定 --- */
 .linklist li a {
   display: flex; /* 中央揃え用 */
   align-items: center; /* 垂直中央 */
   justify-content: center; /* 水平中央 */
-  min-height: 60px; /* 固定の高さ */
+  min-height: 48px; /* 固定の高さ */
   padding: 10px;
   background: var(--card-bg);
   border-radius: 12px;
@@ -167,14 +168,24 @@ h2 {
 .video-row {
   display:flex;
   align-items:flex-start;
+  min-width: 0; /* 親要素の幅制限を無視 */
   border-bottom:1px solid #ddd;
   padding:10px 0;
   transition:background .15s;
+  flex-wrap: wrap; /* 折り返しを許可 */
 }
 .video-row:hover{background:#f5f5ff;}
 .thumb{flex:0 0 120px;margin-right:12px;}
 .thumb img{width:120px;height:auto;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.15);display:block;}
-.info{flex:1;}
+
+.info{
+  flex: 1;
+  min-width: 0; /* 折り返しを許可 */
+  max-width: calc(100% - 132px); /* サムネイル(120px) + マージン(12px) */
+  overflow: hidden; /* 溢れた部分を隠す */
+}
+
+/* --- 動画は4行構成 --- */
 .title {
   font-size: 14px;
   margin-bottom: 2px;
@@ -186,9 +197,25 @@ h2 {
   -webkit-line-clamp: 2; /* 最大2行 */
   max-height: 2.8em; /* 2行分の高さ */
   line-height: 1.4; /* 行間を明示 */
+  word-break: break-word;/* 単語単位で折り返しを強制 */
+  width: 100%; /* 親要素いっぱいに広がるように */
+  box-sizing: border-box; /* パディングやボーダーを含む高さ計算 */
+  flex-shrink: 1; /* 縮小を許可 */
+  max-width: 100%; /* 親の幅を超えない */
+  overflow-wrap: break-word; /* 任意の位置で折り返し */
 }
-.title a{color:#06c;text-decoration:none;}
-.title a:hover{text-decoration:underline;}
+
+.title a{
+  color: #06c;
+  text-decoration: none;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.title a:hover{
+text-decoration:underline;
+}
+
 .desc{font-size:12px;color:#555;line-height:1.4;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .meta{font-size:11px;color:#666;}
 .kw{font-size:11px;color:#d26;margin-left:8px;}
@@ -203,7 +230,7 @@ h2 {
 
     <!-- カテゴリリンク（件数は表示しない） -->
     <ul class="linklist">
-        <li><a href='解説動画(投稿動画).html'>解説動画</a></li><li><a href='総集編(投稿動画).html'>総集編</a></li><li><a href='記録等(投稿動画).html'>記録等</a></li><li><a href='神試合(投稿動画).html'>神試合</a></li><li><a href='奇跡・珍事(投稿動画).html'>奇跡・珍事</a></li><li><a href='魅せプ・やってみた(投稿動画).html'>魅せプ・やってみた</a></li><li><a href='スイカゲーム(投稿動画).html'>スイカゲーム</a></li><li><a href='ズーキーパー(投稿動画).html'>ズーキーパー</a></li>
+        <li><a href='解説動画(投稿動画).html'>解説動画</a></li><li><a href='総集編(投稿動画).html'>総集編</a></li><li><a href='記録等(投稿動画).html'>記録等</a></li><li><a href='神試合(投稿動画).html'>神試合</a></li><li><a href='奇跡・珍事(投稿動画).html'>奇跡・珍事</a></li><li><a href='やってみた系(投稿動画).html'>やってみた系</a></li><li><a href='スイカゲーム(投稿動画).html'>スイカゲーム</a></li><li><a href='ズーキーパー(投稿動画).html'>ズーキーパー</a></li>
     </ul>
 
     <hr class="section-divider">
