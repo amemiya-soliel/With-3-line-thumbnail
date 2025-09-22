@@ -182,10 +182,12 @@ h2 {
   flex: 1;
   min-width: 0; /* 折り返しを許可 */
   max-width: calc(100% - 132px); /* サムネイル(120px) + マージン(12px) */
-  overflow: hidden; /* 溢れた部分を隠す */
+  overflow-x: auto; /* 横スクロールを許可 */
+  white-space: nowrap; /* 横に流れるように */
 }
 
 /* --- 動画は4行構成 --- */
+/* --- タイトル --- */
 .title {
   font-size: 14px;
   margin-bottom: 2px;
@@ -194,30 +196,47 @@ h2 {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /* 最大2行 */
+  -webkit-line-clamp: 2; /* 1行目は折り返し */
   max-height: 2.8em; /* 2行分の高さ */
   line-height: 1.4; /* 行間を明示 */
   word-break: break-word;/* 単語単位で折り返しを強制 */
-  width: 100%; /* 親要素いっぱいに広がるように */
+  width: 100%;
   box-sizing: border-box; /* パディングやボーダーを含む高さ計算 */
   flex-shrink: 1; /* 縮小を許可 */
   max-width: 100%; /* 親の幅を超えない */
-  overflow-wrap: break-word; /* 任意の位置で折り返し */
 }
 
 .title a{
   color: #06c;
   text-decoration: none;
-  word-break: break-word;
-  overflow-wrap: break-word;
+  display: inline; /* 2行目を垂れ流し用に調整 */
+  white-space: nowrap; /* 2行目を折り返さず垂れ流し */
+  overflow: visible; /* 2行目を制限せず表示 */
 }
 
 .title a:hover{
-text-decoration:underline;
+  text-decoration:underline;
 }
 
-.desc{font-size:12px;color:#555;line-height:1.4;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.meta{font-size:11px;color:#666;}
+/* --- 概要欄 --- */
+.desc{
+  font-size: 12px;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 2px;
+  width: auto;
+  white-space: normal; /* 折り返しを許可 */
+  overflow-x: hidden; /* 横スクロールを無効 */
+  overflow-y: visible; /* 垂れ流しで表示 */
+
+.meta{
+  font-size: 11px;
+  color: #666;
+  width: auto; /* 幅を自動調整 */
+  overflow-x: auto; /* 横スクロールを許可 */
+  white-space: nowrap; /* 横に流れるように */
+}
+
 .kw{font-size:11px;color:#d26;margin-left:8px;}
 
     </style>
