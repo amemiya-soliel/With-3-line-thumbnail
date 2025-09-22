@@ -46,19 +46,6 @@ h2 {
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 2px;
-
-  display: -webkit-box;        /* Flexboxベース */
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;       /* 最大2行まで表示 */
-  overflow: hidden;            /* はみ出しは隠す */
-  text-overflow: ellipsis;     /* 省略記号 (…) を付ける */
-  line-height: 1.4;            /* 行間の調整 */
-  max-height: calc(1.4em * 2); /* 2行分の高さに制限 */
-}
-.title a {
-  color:#00f;
-  text-decoration:none;
-
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -67,8 +54,17 @@ h2 {
   line-height: 1.4;
   max-height: calc(1.4em * 2);
 }
-.title a:hover { text-decoration:underline; }
-.title a { color:#00f; text-decoration:none; }
+.title a {
+  color:#00f;
+  text-decoration:none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  max-height: calc(1.4em * 2);
+}
 .title a:hover { text-decoration:underline; }
 .desc { font-size:12px; color:#444; line-height:1.4; margin-bottom:2px;
          white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
@@ -79,16 +75,7 @@ h2 {
 <body>
 <a class="back-link" href="index.html">◀ インデックスへ戻る</a>
 <h2>あめみや杯（2件）</h2>
-
-<div class="video-row">
-  <div class="thumb">
-    <a target="_blank" href="https://www.youtube.com/watch?v=pc18id--8qU">
-      <img alt="thumb" src="https://i.ytimg.com/vi/pc18id--8qU/mqdefault.jpg">
-    </a>
-  </div>
-  <div class="info">
-    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=pc18id--8qU">ぷよテトあめみや杯大会【ぷよぷよテトリス2】【puyopuyotetris2】</a></div>
-    <div class="desc">トーナメント表→https://tonamel.com/competition/MFyUQ/tournament
+<div class="video-row"><div class="thumb"><img src="https://img.youtube.com/vi/pc18id--8qU/mqdefault.jpg" alt=""></div><div class="info"><div class="title"><a href="https://youtu.be/pc18id--8qU">ぷよテトあめみや杯大会【ぷよぷよテトリス2】【puyopuyotetris2】</a></div><div class="desc">トーナメント表→https://tonamel.com/competition/MFyUQ/tournament
 
 ・グランドファイナル→10先
 ・その他→5先
@@ -114,20 +101,7 @@ h2 {
 #ぷよテトあめみや杯
 #あめみやたいよう
 #テトリス
-#ぷよぷよ</div>
-    <div class="meta">2023/06/04 / 3:42:16<span class="kw"></span></div>
-  </div>
-</div>
-
-<div class="video-row">
-  <div class="thumb">
-    <a target="_blank" href="https://www.youtube.com/watch?v=8oSa6svWfWs">
-      <img alt="thumb" src="https://i.ytimg.com/vi/8oSa6svWfWs/mqdefault.jpg">
-    </a>
-  </div>
-  <div class="info">
-    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=8oSa6svWfWs">ぷよテトあめみや杯大会【ぷよぷよテトリス2】【puyopuyotetris2】</a></div>
-    <div class="desc">トーナメント表→https://t.co/tgMcsRnPv6
+#ぷよぷよ</div><div class="meta">2023-06-04 | 3:42:16</div></div></div><div class="video-row"><div class="thumb"><img src="https://img.youtube.com/vi/8oSa6svWfWs/mqdefault.jpg" alt=""></div><div class="info"><div class="title"><a href="https://youtu.be/8oSa6svWfWs">ぷよテトあめみや杯大会【ぷよぷよテトリス2】【puyopuyotetris2】</a></div><div class="desc">トーナメント表→https://t.co/tgMcsRnPv6
 
 ・グランドファイナル→10先
 ・その他→5先
@@ -155,10 +129,6 @@ h2 {
 #ぷよテトあめみや杯
 #あめみやたいよう
 #テトリス
-#ぷよぷよ</div>
-    <div class="meta">2023/06/03 / 4:25:13<span class="kw"></span></div>
-  </div>
-</div>
-
+#ぷよぷよ</div><div class="meta">2023-06-03 | 4:25:13</div></div></div>
 </body>
 </html>

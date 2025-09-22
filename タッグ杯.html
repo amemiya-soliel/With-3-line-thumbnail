@@ -46,19 +46,6 @@ h2 {
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 2px;
-
-  display: -webkit-box;        /* Flexboxベース */
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;       /* 最大2行まで表示 */
-  overflow: hidden;            /* はみ出しは隠す */
-  text-overflow: ellipsis;     /* 省略記号 (…) を付ける */
-  line-height: 1.4;            /* 行間の調整 */
-  max-height: calc(1.4em * 2); /* 2行分の高さに制限 */
-}
-.title a {
-  color:#00f;
-  text-decoration:none;
-
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -67,8 +54,17 @@ h2 {
   line-height: 1.4;
   max-height: calc(1.4em * 2);
 }
-.title a:hover { text-decoration:underline; }
-.title a { color:#00f; text-decoration:none; }
+.title a {
+  color:#00f;
+  text-decoration:none;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  max-height: calc(1.4em * 2);
+}
 .title a:hover { text-decoration:underline; }
 .desc { font-size:12px; color:#444; line-height:1.4; margin-bottom:2px;
          white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
@@ -79,16 +75,7 @@ h2 {
 <body>
 <a class="back-link" href="index.html">◀ インデックスへ戻る</a>
 <h2>タッグ杯（1件）</h2>
-
-<div class="video-row">
-  <div class="thumb">
-    <a target="_blank" href="https://www.youtube.com/watch?v=LXKaZbVW6kE">
-      <img alt="thumb" src="https://i.ytimg.com/vi/LXKaZbVW6kE/mqdefault.jpg">
-    </a>
-  </div>
-  <div class="info">
-    <div class="title"><a target="_blank" href="https://www.youtube.com/watch?v=LXKaZbVW6kE">第1回ぷよテト全国大会タッグ最強決定戦【ぷよぷよテトリス2】【puyopuyotetris2】</a></div>
-    <div class="desc">↓トーナメント表https://tonamel.com/competition/9xTmK/participants
+<div class="video-row"><div class="thumb"><img src="https://img.youtube.com/vi/LXKaZbVW6kE/mqdefault.jpg" alt=""></div><div class="info"><div class="title"><a href="https://youtu.be/LXKaZbVW6kE">第1回ぷよテト全国大会タッグ最強決定戦【ぷよぷよテトリス2】【puyopuyotetris2】</a></div><div class="desc">↓トーナメント表https://tonamel.com/competition/9xTmK/participants
 
 チャンネル登録→https://goo.gl/jzIHw6
 ツイッター→https://twitter.com/inazuma0217tai1
@@ -99,10 +86,6 @@ h2 {
 ・同じコメントの連投をしない
 ・プレイヤー批判をしない
 ・荒らしには反応しない
-・コメント欄で会話をしない</div>
-    <div class="meta">2024/04/21 / 2:57:06<span class="kw"></span></div>
-  </div>
-</div>
-
+・コメント欄で会話をしない</div><div class="meta">2024-04-21 | 2:57:06</div></div></div>
 </body>
 </html>
